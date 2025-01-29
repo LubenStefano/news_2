@@ -1,11 +1,12 @@
 .sidebar {
     width: 20%;
     padding: 20px 0;
-    position: absolute;
+    position: fixed;
     border: 1px solid #333;
     border-top: none;
     border-left: none;
     height: 100%;
+    margin-top: 50px;
 }
 nav{
     width: 100%;
