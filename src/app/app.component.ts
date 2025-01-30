@@ -5,12 +5,15 @@ import { AdsAsideComponent } from './core/ads-aside/ads-aside.component';
 import { SideNavbarComponent } from "./core/side-navbar/side-navbar.component";
 import { PostFlowComponent } from "./post-flow/post-flow.component";
 import { DashboardUiComponent } from "./dashboard-ui/dashboard-ui.component";
+import { LedDisplayComponent } from './led-display/led-display.component';
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NavbarComponent, AdsAsideComponent, SideNavbarComponent, PostFlowComponent, DashboardUiComponent],
+  standalone: true,
+  imports: [RouterOutlet, NavbarComponent, AdsAsideComponent, SideNavbarComponent, PostFlowComponent, DashboardUiComponent, LedDisplayComponent],
   templateUrl: './app.component.html',
+  template: `<app-led-display text="Scrolling LED Text in Angular 15+!"></app-led-display>`,
   styleUrl: './app.component.css'
 })
 export class AppComponent {
