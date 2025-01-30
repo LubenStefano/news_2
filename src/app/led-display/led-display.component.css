@@ -19,7 +19,7 @@
   .led-text {
     display: flex;
     gap: 25px; /* Space between duplicated text */
-    animation: marquee 8s linear infinite;
+    animation: marquee 15s linear infinite;
     width: max-content;
   }
   
