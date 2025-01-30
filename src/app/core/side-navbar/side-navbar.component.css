@@ -34,7 +34,7 @@ nav{
     transition: 0.2s;
 }
 .sidebar ul li:hover{
-   background-color: #333;
+   background-color: #919191;
    border-radius: 10px;
 }
 
