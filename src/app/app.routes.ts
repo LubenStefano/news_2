@@ -7,5 +7,6 @@ export const routes: Routes = [
     { path: '', component: PostFlowComponent },
     { path: 'home', component: PostFlowComponent },
     {path: 'creator/login', component: LoginComponent},
-    {path: 'admin/createUser', component: CreateUserComponent}
+    {path: 'admin/createUser', component: CreateUserComponent},
+    {path: '**', redirectTo: '/home'}
 ];
