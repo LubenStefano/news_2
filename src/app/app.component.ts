@@ -11,7 +11,7 @@ import { LedDisplayComponent } from './led-display/led-display.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NavbarComponent, AdsAsideComponent, SideNavbarComponent, PostFlowComponent, DashboardUiComponent, LedDisplayComponent],
+  imports: [RouterOutlet, NavbarComponent, AdsAsideComponent, SideNavbarComponent, DashboardUiComponent, LedDisplayComponent],
   templateUrl: './app.component.html',
   template: `<app-led-display text="Scrolling LED Text in Angular 15+!"></app-led-display>`,
   styleUrl: './app.component.css'
