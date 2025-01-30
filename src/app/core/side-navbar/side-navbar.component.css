@@ -62,29 +62,38 @@ nav{
 }
 
 .side-footer {
-    position: relative;
-    margin-left: 50px;
-    width: 65%;
-    height: 80px;
-    padding: 10px 20px 20px 10px;
-    border-top: 1px solid #F8F1E5;
-    color: #6a6a6a;
-    font-size: 15px;
-}
-.contact-btn1 {
-    position: flex;
-    gap: 200px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 20%;
+    height: auto; /* Автоматична височина според съдържанието */
     padding: 10px;
-    background-color: rgba(255, 217, 0, 0.651);
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-    margin-top: 10px;
+    border-top: 1px solid #F8F1E5;
+    background-color: rgba(255, 255, 255, 0);
+    color: #6a6a6a00;
     font-size: 15px;
-    border-radius: 10px;
-    transition: 0.2s;
-}
-.contact-btn1:hover {
-    background-color: rgba(255, 217, 0, 0.735);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Две колони */
+    grid-template-rows: repeat(2, 1fr); /* Два реда */
+    gap: 10px; /* Разстояние между бутоните */
+    justify-content: center;
+    align-items: center;
+    box-shadow: -2px -2px 5px rgba(0, 0, 0, 0.1);
 }
 
+.contact-btn1 {
+    background-color: rgba(255, 217, 0, 0.8);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 10px;
+    text-align: center;
+    transition: background-color 0.2s, transform 0.1s;
+    width: 100%; /* Прави бутоните еднакви по ширина */
+}
+
+.contact-btn:hover {
+    background-color: rgba(255, 217, 0, 0.9);
+    transform: scale(1.05);
+}
