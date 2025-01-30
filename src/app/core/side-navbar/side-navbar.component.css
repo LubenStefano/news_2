@@ -89,7 +89,7 @@ nav{
 
 .top-left {
     top: 0;
-    left: 0;
+    left: 10;
 }
 
 .top-right {
@@ -99,7 +99,7 @@ nav{
 
 .bottom-left {
     bottom: 0;
-    left: 0;
+    left: 10;
 }
 
 .bottom-right {
