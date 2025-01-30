@@ -3,9 +3,19 @@
   padding: 0;
   box-sizing: border-box;
   font-family: Arial, sans-serif;
+  border-top: rgb(0, 0, 0);
+  border-bottom: rgb(0, 0, 0);
+  border-left: rgb(0, 0, 0);
+  border-right: rgb(0, 0, 0);
 }
 
 body {
   background-color: #000000;
   color: rgb(255, 255, 255);
+
+}
+div, section, article {
+  border: 1px solid rgb(0, 0, 0); /* Change color here */
+  border-bottom: 1px solid rgb(0, 0, 0); /* Change color here */
+  box-sizing: border-box;
 }
