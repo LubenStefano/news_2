@@ -1,9 +1,8 @@
 <section class="popular-creators">
     <div class="header">
       <h2>POPULAR CREATORS</h2>
-      <button class="more" (click)="toggleShowMore()">{{text}}</button>
     </div>
-   <div class="creators-list" [ngStyle]="{'flex-wrap': showAll ? 'wrap' : 'nowrap'}">
+   <div class="creators-list">
         @for (creator of creators; track $index) {
       <div class="creator">
         <img [src]="creator.img" alt="pfp">

@@ -30,41 +30,4 @@ export class TopCreatorsComponent {
       img: 'https://braverplayers.org/wp-content/uploads/2022/09/blank-pfp-300x300.png',
     },
   ];
-
-  additionalCreators = [
-    {
-      name: 'Petar Dimitrov',
-      img: 'https://braverplayers.org/wp-content/uploads/2022/09/blank-pfp-300x300.png',
-    },
-    {
-      name: 'Maria Stoyanova',
-      img: 'https://braverplayers.org/wp-content/uploads/2022/09/blank-pfp-300x300.png',
-    },
-    {
-      name: 'Georgi Angelov',
-      img: 'https://braverplayers.org/wp-content/uploads/2022/09/blank-pfp-300x300.png',
-    },
-    {
-      name: 'Desislava Petkova',
-      img: 'https://braverplayers.org/wp-content/uploads/2022/09/blank-pfp-300x300.png',
-    },
-    {
-      name: 'Nikola Hristov',
-      img: 'https://braverplayers.org/wp-content/uploads/2022/09/blank-pfp-300x300.png',
-    },
-  ];
-  showAll = false;
-  containerStyle = { 'flex-wrap': 'nowrap' };
-  text = 'Show more';
-
-  toggleShowMore(): void {
-    this.showAll = !this.showAll;
-    if (this.showAll) {
-      this.creators = [...this.creators, ...this.additionalCreators];
-      this.text = 'Show less';
-    } else {
-      this.creators = this.creators.slice(0, 5);
-      this.text = 'Show more';
-    }
-  }
 }
