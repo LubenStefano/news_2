@@ -5,8 +5,8 @@
    <div class="creators-list">
         @for (creator of creators; track $index) {
       <div class="creator">
-        <img [src]="creator.img" alt="pfp">
-        <p class="name">{{ creator.name }}</p>
+        <img [src]="creator.pfp" alt="pfp">
+        <p class="name">{{ creator.username }}</p>
       </div>
     }
     </div>

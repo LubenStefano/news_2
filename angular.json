@@ -27,8 +27,7 @@
               }
             ],
             "styles": [
-              "https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap",
-  "src/styles.css"
+              "src/styles.css"
             ],
             "scripts": []
           },
