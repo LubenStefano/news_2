@@ -1,7 +1,7 @@
 .popular-creators {
   padding: 50px 5px 15px 5px;
   border-radius: 10px;
-  border-color: #f8f1e5;
+  border-color: #ffffff;
   width: 100%;
 }
 
@@ -32,7 +32,7 @@
   padding: 10px;
   border-radius: 10px;
   cursor: pointer;
-  border: 1px solid #f8f1e5;
+  border: 1px solid #ffffff;
   transition: 0.2s;
 }
 
@@ -44,7 +44,7 @@
   width: 125px;
   height: 125px;
   border-radius: 10px;
-  opacity: 0.5;
+  opacity: 1;
   transition: 0.2s;
   padding: 2px; /* Space for border */
   background: linear-gradient(45deg, orange, magenta, purple);
