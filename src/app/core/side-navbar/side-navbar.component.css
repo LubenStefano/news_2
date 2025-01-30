@@ -2,7 +2,7 @@
     width: 20%;
     padding: 20px 0;
     position: fixed;
-    border: 1px solid #333;
+    border: 1px solid #ffffff;
     border-top: none;
     border-left: none;
     height: 100%;
@@ -34,7 +34,7 @@ nav{
     transition: 0.2s;
 }
 .sidebar ul li:hover{
-   background-color: #333;
+   background-color: #919191;
    border-radius: 10px;
 }
 

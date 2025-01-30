@@ -49,6 +49,11 @@
   border-radius: 10px;
   opacity: 0.5;
   transition: 0.2s;
+  padding: 2px; /* Space for border */
+  background: linear-gradient(45deg, orange, magenta, purple);
+  display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .creator img:hover {
