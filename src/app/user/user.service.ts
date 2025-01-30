@@ -1,19 +1,37 @@
 import { Injectable } from "@angular/core";
-import { Auth } from "@angular/fire/auth";
-import { Firestore, collectionData, collection } from "@angular/fire/firestore";
+import { Auth, onAuthStateChanged, User as FirebaseUser } from "@angular/fire/auth";
+import { Firestore, collectionData, collection, docData } from "@angular/fire/firestore";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
-import { catchError, from, Observable, of, switchMap } from "rxjs";
-import { User } from "../types/user"
+import { catchError, from, Observable, of, switchMap, BehaviorSubject } from "rxjs";
+import { User } from "../types/user";
 import { doc, limit, orderBy, query, setDoc } from "firebase/firestore";
 
 @Injectable({
   providedIn: "root",
 })
 export class UserService {
+
+  private currentUserSubject: BehaviorSubject<User | null> = new BehaviorSubject<User | null>(null);
+  currentUser$: Observable<User | null> = this.currentUserSubject.asObservable();
+
   constructor(
     private auth: Auth,
     private firestore: Firestore
-  ) {}
+  ) {
+    this.initCurrentUser();
+  }
+
+  private initCurrentUser(): void {
+    onAuthStateChanged(this.auth, (firebaseUser: FirebaseUser | null) => {
+      if (firebaseUser) {
+        this.getUser(firebaseUser.uid).subscribe(userData => {
+          this.currentUserSubject.next(userData);
+        });
+      } else {
+        this.currentUserSubject.next(null);
+      }
+    });
+  }
 
   createUser(userData: {
     email: string;
@@ -26,7 +44,6 @@ export class UserService {
     return from(createUserWithEmailAndPassword(this.auth, email, password)).pipe(
       switchMap((credential) => {
         const user = credential.user;
-  
         return updateProfile(user, {
           displayName: username,
           photoURL: pfp,
@@ -51,7 +68,6 @@ export class UserService {
     );
   }
 
-  
   login(email: string, password: string): Observable<{ uid: string; displayName: string }> {
     return from(signInWithEmailAndPassword(this.auth, email, password)).pipe(
       switchMap((credential) => {
@@ -62,8 +78,8 @@ export class UserService {
         });
       }),
       catchError((error) => {
-        console.error(error.code);
-        throw new Error(error.code);
+        console.error('Error during login:', error);
+        throw new Error('Login failed');
       })
     );
   }
@@ -74,5 +90,14 @@ export class UserService {
     console.log(collectionData(usersQuery, { idField: 'id' }));
     
     return collectionData(usersQuery, { idField: 'id' }) as Observable<User[]>;
+  }
+
+  getUser(uid: string): Observable<User> {
+    const userDocRef = doc(this.firestore, `users/${uid}`);
+    return docData(userDocRef) as Observable<User>;
+  }
+
+  getCurrentUser(): Observable<User | null> {
+    return this.currentUser$;
   }
 }

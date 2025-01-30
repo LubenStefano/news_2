@@ -28,7 +28,9 @@
   text-align: center;
   transition: 0.2s;
 }
-
+.filter-options option{
+  color: white; /* White text */
+}
 .filter-options:hover {
   background-color: #333; /* Dark background */
 }

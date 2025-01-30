@@ -3,6 +3,7 @@ import { Component } from "@angular/core";
 import { FormsModule, NgForm } from "@angular/forms";
 import { UserService } from "../user.service";
 import { Router } from "@angular/router";
+import { catchError } from "rxjs";
 
 @Component({
   selector: "app-login",
@@ -19,8 +20,14 @@ export class LoginComponent {
       password: form.value.password,
     };
 
-    this.userService.login(user.email, user.password).subscribe(() => {
-      this.router.navigate(["/home"]);
+    this.userService.login(user.email, user.password).subscribe({
+      next: () => {
+        this.router.navigate(["/home"]);
+      },
+      error: (error) => {
+        console.error('Error during login:', error);
+        throw new Error('Login failed');
+      }
     });
   }
 }
