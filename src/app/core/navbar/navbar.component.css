@@ -3,8 +3,8 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: black;
-    border-bottom: 2px solid #222;
+    background-color: #004E89;
+    border-bottom: 2px solid #004E89;
     height: 50px;
     position: fixed;
     width: 100%;
@@ -14,6 +14,7 @@
 .logo {
     font-size: 25px;
     font-weight: bold;
+    border: 2px solid #004E89;
 }
 
 .beta {

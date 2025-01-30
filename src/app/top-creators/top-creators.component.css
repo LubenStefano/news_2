@@ -1,6 +1,7 @@
 .popular-creators {
   padding: 50px 5px 15px 5px;
   border-radius: 10px;
+  border-color: #F8F1E5;
   width: 100%;
 }
 
@@ -27,11 +28,11 @@
 }
 .more {
   background-color: transparent;
-  color: white;
+  color: rgb(0, 0, 0);
   padding: 10px;
   border-radius: 10px;
   cursor: pointer;
-  border: 1px solid #333;
+  border: 1px solid #F8F1E5;
   transition: 0.2s;
 }
 
@@ -58,7 +59,7 @@
   bottom: 1;
   width: 100%;
   text-align: center;
-  color: white;
+  color: rgb(0, 0, 0);
   margin-bottom: 1px;
   font-weight: bold;
 }

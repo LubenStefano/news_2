@@ -4,7 +4,7 @@
     position: absolute;
     top: 53px;
     margin-left:75%;
-    border: 1px solid #000000;
+    border: 1px solid #F8F1E5;
     border-top: none;
     border-right: none;
     height: 100%;
@@ -12,7 +12,7 @@
 
 .ad-placeholder {
     margin-top: 20px;
-    background-color: #222;
+    background-color: #004E89;
     padding: 15px;
     border-radius: 10px;
     height: 300px;
@@ -21,7 +21,7 @@
 
 .post-placeholder {
     margin-top: 20px;
-    background-color: #222;
+    background-color: #004E89;
     padding: 15px;
     border-radius: 10px;
     height: 400px;
